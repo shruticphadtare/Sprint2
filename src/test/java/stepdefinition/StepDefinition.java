@@ -75,45 +75,45 @@ public class StepDefinition {
 			 }
 	}
 
-	@Given("Admin will hover the mouse over media section and click on library")
-	public void admin_will_hover_the_mouse_over_media_section_and_click_on_library() {
-		try {
-			
-			WebElement Media= driver.findElement(By.xpath("//li[@id='menu-media']"));    			// Locating the Main Menu (Parent element)
-			Actions actions = new Actions(driver);                                     				//Instantiating Actions class
-			actions.moveToElement(Media);											  				//Hovering on main menu
-			Thread.sleep(2000);
-
-			
-			WebElement library= driver.findElement(By.xpath("//li[@id='menu-media']/a/div[3]"));	// Locating the element from Sub Menu
-			actions.moveToElement(library);															//To mouseover on sub menu
-			actions.click().build().perform();														//build()- used to compile all the actions into a single step 
-		} 
-		
-		catch (Exception e) {
-			System.out.println("Admin is not able to hover over media section"+e);
-			Assert.fail();
-		}
-		
-	}
-	    
-	    
-	    
-	  @Then("Admin will be able to see media library")
+	
+	  @Given("Admin will hover the mouse over media section and click on library")
+	  public void
+	  admin_will_hover_the_mouse_over_media_section_and_click_on_library(){ 
+		  try {
+			  WebElement Media= driver.findElement(By.xpath("//li[@id='menu-media']"));  
+			  Actions actions = new Actions(driver);                         			 
+			  actions.moveToElement(Media); 										
+			  Thread.sleep(2000);
+	  
+	  
+			  WebElement library=driver.findElement(By.xpath("//li[@id='menu-media']/a/div[3]")); 	
+			  actions.moveToElement(library); 															
+			  actions.click().build().perform(); 
+		  	}
+	  
+		  catch (Exception e) {
+			  System.out.println("Admin is not able to hover over media section"+e);
+			  Assert.fail(); }
+	  
+	  }
+	  
+	  
+	
+	  @Then("Admin will be able to see media library") 
 	  public void admin_will_be_able_to_see_media_library() { 
 		  try { 
 			  String expectedtitle="Media Library ‹ Real Estate — WordPress"; 
-			  String actualTitle=driver.getTitle(); 
-			  Assert.assertEquals(expectedtitle,actualTitle); 
+			  String actualTitle=driver.getTitle();
+			  Assert.assertEquals(expectedtitle,actualTitle);
 			  System.out.println("Actual Title: "+actualTitle);
-			  System.out.println("----------------------------");
-	  } 
+			  System.out.println("----------------------------"); }
 	  
-	  catch (Exception e) {
-		  	System.out.println("Admin is not able to see media library"); 
-		  	Assert.fail();
-	  } 
-	}
+		  catch (Exception e) {
+			  System.out.println("Admin is not able to see media library"); 
+			  Assert.fail();
+		  	}
+		 }
+	 
 	 
 	  @Then("admin will hover over media section and click on Add New tab")
 	  public void admin_will_hover_over_media_section_and_click_on_Add_New_tab() {
@@ -122,10 +122,13 @@ public class StepDefinition {
 				WebElement Media= driver.findElement(By.xpath("//li[@id='menu-media']"));
 				Actions actions = new Actions(driver);
 				actions.moveToElement(Media);
+				Thread.sleep(3000);
 
 				WebElement addnew= driver.findElement(By.linkText("Add New"));
 				actions.moveToElement(addnew);
+				Thread.sleep(2000);
 				actions.click().build().perform();
+				Thread.sleep(3000);
 			} 
 		  
 		  catch (Exception e) {
