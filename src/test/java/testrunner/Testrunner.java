@@ -10,9 +10,9 @@ import cucumber.api.junit.Cucumber;
 		,glue= {"stepdefinition","hooks"}
 		//,dryRun = true
 		,monochrome=true
-		,tags= {"~@Ignore"},
-		//,tags= {"bulkaction","search"}
-		plugin={"pretty","html:target/sprint-pretty"}
+		//,tags= {"~@Ignore"},
+		//,tags= {"@bulkaction"}
+		,plugin={"pretty","html:target/sprint-pretty"}
 		)
 public class Testrunner {
 

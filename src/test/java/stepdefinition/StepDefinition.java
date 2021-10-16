@@ -66,6 +66,8 @@ public class StepDefinition {
 				String expectedtitle= "Dashboard ‹ Real Estate — WordPress";
 				String actualTitle=driver.getTitle();
 				Assert.assertEquals(expectedtitle,actualTitle );
+				System.out.println("Title of real estate dashboard is "+actualTitle);
+				System.out.println("----------------------------");
 			} 
 			 catch (Exception e) {
 				System.out.println("Admin is not able to navigate to dashborad");
@@ -104,6 +106,7 @@ public class StepDefinition {
 			  String actualTitle=driver.getTitle(); 
 			  Assert.assertEquals(expectedtitle,actualTitle); 
 			  System.out.println("Actual Title: "+actualTitle);
+			  System.out.println("----------------------------");
 	  } 
 	  
 	  catch (Exception e) {
@@ -139,7 +142,8 @@ public class StepDefinition {
 				String expectedtitle= "Upload New Media ‹ Real Estate — WordPress";
 				String actualTitle=driver.getTitle();
 				Assert.assertEquals(expectedtitle,actualTitle );
-				System.out.println("Actual Title: "+actualTitle); 
+				System.out.println("Actual Title of upload new media webpage: "+actualTitle); 
+				System.out.println("----------------------------");
 	   			} 
 		 catch (Exception e) {
 			 	System.out.println("Admin is not able to navigate to upload new media webpage");
@@ -152,6 +156,7 @@ public class StepDefinition {
 	   	    try {
 				Boolean b=driver.findElement(By.xpath("//*[@id='async-upload']")).isDisplayed();
 				System.out.println("Choose file field is present: "+b);
+				System.out.println("----------------------------");
 			} catch (Exception e) {
 				System.out.println("Choose field file is not present"+e);
 				Assert.fail();
@@ -164,7 +169,9 @@ public class StepDefinition {
 		   try { 
 			   String expectedtitle="Media Library ‹ Real Estate — WordPress"; 
 			   String actualTitle=driver.getTitle(); 
-			   Assert.assertEquals(expectedtitle,actualTitle); 
+			   Assert.assertEquals(expectedtitle,actualTitle);
+			   System.out.println("Actual Title of media library webpage"+actualTitle);
+			   System.out.println("----------------------------");
 			   } 
 		   catch (Exception e) {
 			   System.out.println("Admin is not able to see media library"+e); 
@@ -209,6 +216,7 @@ public class StepDefinition {
 		   		driver.findElement(By.id("post-query-submit")).click();
 		   		String items= driver.findElement(By.className("displaying-num")).getText();
 		   		System.out.println("Number of items: " +items);
+		   		System.out.println("----------------------------");
 		   		} 
 		   	catch (Exception e) {
 		   		System.out.println("Admin is not able to click on filter tab"+e);
@@ -240,6 +248,7 @@ public class StepDefinition {
 				driver.findElement(By.id("post-query-submit")).click();
 				String items= driver.findElement(By.className("displaying-num")).getText();
 				System.out.println("Number of items: " +items);
+				System.out.println("----------------------------");
 		   		} 
 		   	catch (Exception e) {
 				System.out.println("Admin is not able to click on filter tab"+e);
@@ -269,6 +278,7 @@ public class StepDefinition {
 			   driver.findElement(By.id("post-query-submit")).click();
 			   String items= driver.findElement(By.className("displaying-num")).getText();
 			   System.out.println("Number of items: " +items);
+			   System.out.println("----------------------------");
 		   		} 
 		   catch (Exception e) {
 			   System.out.println("Admin is not able to click on filter tab"+e);
@@ -311,6 +321,7 @@ public class StepDefinition {
 			   driver.findElement(By.id("post-query-submit")).click();
 			   String items= driver.findElement(By.className("displaying-num")).getText();
 			   System.out.println("Number of items: " +items);
+			   System.out.println("----------------------------");
 		   		}
 		   catch (Exception e) {
 			   System.out.println("Admin is not able to click on filter tab"+e);
@@ -340,6 +351,7 @@ public class StepDefinition {
 			   driver.findElement(By.id("post-query-submit")).click();
 			   String items= driver.findElement(By.className("displaying-num")).getText();
 			   System.out.println("Number of items: " +items);
+			   System.out.println("----------------------------");
 		   		} 
 		   catch (Exception e) {
 			System.out.println("Admin is not able to click on filter tab"+e);
@@ -381,6 +393,8 @@ public class StepDefinition {
 				Select bulkaction = new Select(driver.findElement(By.id("bulk-action-selector-top")));
 				bulkaction.selectByVisibleText("Delete Permanently");
 				Thread.sleep(2000);
+				System.out.println("Admin is able to click on bulk action dropdown and is able to select delete permanently option");
+				System.out.println("----------------------------");
 				}
 			catch (Exception e) {
 				System.out.println("Admin is not able to click on bulk action"+e); 
@@ -392,6 +406,8 @@ public class StepDefinition {
 		public void admin_will_select_checkbox_available_in_front_of_image() {
 			try {
 				driver.findElement(By.id("cb-select-11773")).click();
+				System.out.println("Admin is able to select checkbox");
+				System.out.println("----------------------------");
 				} 
 			catch (Exception e) {
 					System.out.println("Admin is not able to select checkbox"+e);
@@ -405,6 +421,8 @@ public class StepDefinition {
 			try {
 				driver.findElement(By.xpath("//*[@id='doaction']")).click();
 				Thread.sleep(1000);
+				System.out.println("Admin is able to click on apply button");
+				System.out.println("----------------------------");
 				} 
 			catch (Exception e) {
 				System.out.println("Admin is not able to click on apply button"+e);
@@ -417,7 +435,8 @@ public class StepDefinition {
 			try {
 					Alert alert=driver.switchTo().alert();     
 					String alertMessage= alert.getText();								// Capturing alert message	
-					System.out.println(alertMessage);       							// Displaying alert message	
+					System.out.println(alertMessage);  									// Displaying alert message	
+					System.out.println("----------------------------");
 				} 
 			catch (Exception e) {
 				System.out.println("Alert message not displayed"+e);
@@ -432,6 +451,7 @@ public class StepDefinition {
 					Alert alert=driver.switchTo().alert(); 
 					alert.dismiss();
 					System.out.println("Admin dismiss the alert message");
+					System.out.println("----------------------------");
 					}
 				catch (Exception e) {
 					System.out.println("Admin is not able to dismiss the alert message"+e);
@@ -497,6 +517,7 @@ public class StepDefinition {
 				String actualtext1="Search results for “apartment”";
 				Assert.assertEquals(expectedtext1,actualtext1);
 				System.out.println("Result of search message is: "+expectedtext1);
+				System.out.println("----------------------------");
 			} 
 			catch (Exception e) {
 				System.out.println("Result of search message is not displayed on the screen"+e);
@@ -511,7 +532,8 @@ public class StepDefinition {
 		public void admin_will_check_the_availability_of_items_according_to_search() {
 			try {
 				String str=driver.findElement(By.xpath("//*[@id=\"posts-filter\"]/div[2]/div[2]/span[1]")).getText();
-				System.out.println(str);
+				System.out.println("Available items according to search: "+str);
+				System.out.println("----------------------------");
 				} 
 			catch (Exception e) {
 				System.out.println("Admin is not able to get the text"+e);
@@ -557,6 +579,8 @@ public class StepDefinition {
 			try {
 				driver.findElement(By.xpath("//*[@id='show-settings-link']")).click();
 				Thread.sleep(3000);
+				System.out.println("Admin is able to click on screen options tab");
+				System.out.println("----------------------------");
 				}	
 			catch (Exception e) {
 					System.out.println("Admin is unable to click on screen options button"+e);
@@ -576,6 +600,7 @@ public class StepDefinition {
 				driver.findElement(By.id("date-hide")).click();
 				Thread.sleep(1000);
 				System.out.println("Admin deselects all the checkbox");
+				System.out.println("----------------------------");
 				} 
 			catch (Exception e) {
 				System.out.println("Admin is not able to deselect the checkbox");
@@ -593,6 +618,8 @@ public class StepDefinition {
 				if(x==false)
 			   	driver.findElement(By.id("author-hide")).click();
 				Thread.sleep(1000);
+				System.out.println("Admin is able to click on author checkbox");
+				System.out.println("----------------------------");
 				} 	
 			catch (Exception e) {
 				System.out.println("Admin is not able to select the author checkbox");
@@ -607,6 +634,7 @@ public class StepDefinition {
 				String actualtext1="Author";
 				Assert.assertEquals(expectedtext1,actualtext1);
 				System.out.println("Author column is present in media table");
+				System.out.println("----------------------------");
 				} 	
 			catch (Exception e) {
 				System.out.println("author column is not present"+e);
@@ -621,6 +649,8 @@ public class StepDefinition {
 				if(x==false)
 				driver.findElement(By.id("parent-hide")).click();
 				Thread.sleep(1000);
+				System.out.println("Admin is able to click on uploaded to checkbox");
+				System.out.println("----------------------------");
 					
 				} 
 			catch (Exception e) {
@@ -636,6 +666,7 @@ public class StepDefinition {
 				String actualtext2="Uploaded to";
 				Assert.assertEquals(expectedtext2,actualtext2);
 				System.out.println("uploaded to column is present in media table");
+				System.out.println("----------------------------");
 				} 
 			catch (Exception e) {
 				System.out.println("uploaded to column is not present"+e);
@@ -650,6 +681,8 @@ public class StepDefinition {
 				if(x==false)
 				driver.findElement(By.id("comments-hide")).click();
 				Thread.sleep(1000);
+				System.out.println("Admin is able to click on comment checkbox");
+				System.out.println("----------------------------");
 				} 
 			catch (Exception e) {
 				System.out.println("Admin is not able to select the author checkbox");
@@ -665,6 +698,7 @@ public class StepDefinition {
 				String actualtext3="Comments";
 				Assert.assertEquals(expectedtext3,actualtext3);
 				System.out.println("comments column is present in media table");
+				System.out.println("----------------------------");
 				} 
 			catch (Exception e) {
 				System.out.println("comments column is not present"+e);
@@ -679,6 +713,8 @@ public class StepDefinition {
 				if(x==false)
 				driver.findElement(By.id("date-hide")).click();
 				Thread.sleep(1000);
+				System.out.println("Admin is able to click on date checkbox");
+				System.out.println("----------------------------");
 				} 
 			catch (Exception e) {
 				System.out.println("Admin is not able to select the author checkbox");
@@ -693,6 +729,7 @@ public class StepDefinition {
 				String actualtext4="Date";
 				Assert.assertEquals(expectedtext4,actualtext4);
 				System.out.println("date column is present in media table");
+				System.out.println("----------------------------");
 				} 
 			catch (Exception e) {
 				System.out.println("date column is not present"+e);
@@ -713,6 +750,7 @@ public class StepDefinition {
 					
 					for(int i=0; i<colHeader.size(); i++){
 						System.out.println(colHeader.get(i).getText());
+						System.out.println("----------------------------");
 						}
 					} 
 				catch (Exception e) {
@@ -729,6 +767,7 @@ public class StepDefinition {
 				for(int i=2; i<=10; i++){
 					for(int j=1; j<=4; j++){
 						System.out.print(driver.findElement(By.xpath("//*[@id='the-list']/tr["+i+"]/td["+j+"]")).getText());
+						System.out.println(" ");
 						}
 					}
 				} 
@@ -809,6 +848,7 @@ public class StepDefinition {
 				if(pagination.size()>0)																							// check if pagination link exists 
 					{ 
 					System.out.println("pagination exists"); 
+					System.out.println("----------------------------");
 
 				for(int i=0; i<pagination.size(); i++)         																	 // click on pagination link 
 					{ 
@@ -832,6 +872,7 @@ public class StepDefinition {
 			try { 
 				String Currentpage=driver.findElement(By.xpath("//*[@id='table-paging']/span")).getText(); 
 				System.out.println("Current page is: "+Currentpage); 
+				System.out.println("----------------------------");
 				} 
 			catch(Exception e) {
 				System.out.println("Admin is not able to get current page"+e); 
@@ -846,6 +887,7 @@ public class StepDefinition {
 				nextpage.click();
 				Thread.sleep(2000); 
 				System.out.println("Admin is on the second page");
+				System.out.println("----------------------------");
 				} 
 			catch (Exception e) {
 				System.out.println("Admin is not able to click on next page"+e); 
@@ -860,6 +902,7 @@ public class StepDefinition {
 				lastpage.click();
 				Thread.sleep(2000); 
 				System.out.println("Admin is on the last page");
+				System.out.println("----------------------------");
 				} 
 			catch (Exception e) {
 				System.out.println("Admin is not able to navigate on last page"+e);
@@ -888,6 +931,7 @@ public class StepDefinition {
 			try {
 				String totalitems= driver.findElement(By.xpath("//*[@id='posts-filter']/div[2]/div[2]/span[1]")).getText();
 				System.out.println("Total number of images in the media table are:"+totalitems);
+				System.out.println("----------------------------");
 				}
 			catch (Exception e) {
 				System.out.println("Admin is not able to count total number of items on the title bar of media table"+e);
@@ -938,6 +982,7 @@ public class StepDefinition {
 				Assert.assertEquals(expectedtitle,actualtitle);
 				Thread.sleep(1000);
 				System.out.println("Actual Title is:" +actualtitle);
+				System.out.println("----------------------------");
 				}
 			catch (Exception e) {
 				System.out.println("Edit media webpage is unavailable"+e);
@@ -955,18 +1000,21 @@ public class StepDefinition {
 			  driver.findElement(By.id("attachment_caption")).sendKeys(caption);
 			  Thread.sleep(1000);
 			  System.out.println("Admin is able to enter caption"); 
+			  System.out.println("----------------------------");
 			  
 			  driver.findElement(By.id("attachment_alt")).clear();
 			  Thread.sleep(1000);
 			  driver.findElement(By.id("attachment_alt")).sendKeys(alternativetext);
 			  Thread.sleep(1000);
 			  System.out.println("Admin is able to enter alttext");
+			  System.out.println("----------------------------");
 			  
 			  driver.findElement(By.id("attachment_content")).clear();
 			  Thread.sleep(1000);
 			  driver.findElement(By.id("attachment_content")).sendKeys(content);
 			  Thread.sleep(1000); 
 			  System.out.println("Admin is able to enter content in the description field");
+			  System.out.println("----------------------------");
 			  
 		  	} 
 		  catch (Exception e) {
@@ -987,6 +1035,7 @@ public class StepDefinition {
 			  driver.findElement(By.id("publish")).click();
 			  Thread.sleep(1000);
 			  System.out.println("admin is able to click on update tab");
+			  System.out.println("----------------------------");
 			  } 
 		  
 		  catch (Exception e) {
@@ -1001,6 +1050,7 @@ public class StepDefinition {
 			try {
 				Boolean Display = driver.findElement(By.xpath("//*[@id='message']/p")).isDisplayed();
 				System.out.println("Admin verifies success message :"+Display);
+				System.out.println("----------------------------");
 				} 
 			catch (Exception e) {
 				System.out.println("Admin is not able to verify success message"+e);
@@ -1020,6 +1070,7 @@ public class StepDefinition {
 			  	String actualtitle="Tiger";
 			  	Assert.assertEquals(expectedtitle, actualtitle);
 			  	System.out.println("Title on the webpage is: "+actualtitle);
+			  	System.out.println("----------------------------");
 			  	
 		  		} 
 		  catch (Exception e) {
@@ -1039,6 +1090,7 @@ public class StepDefinition {
 			    
 			    Boolean Display = driver.findElement(By.xpath("//*[@id='post-11773']/div/p[2]")).isDisplayed();
 				System.out.println("Content is present: "+Display);
+				System.out.println("----------------------------");
 		  		}
 		  
 		  catch (Exception e) {

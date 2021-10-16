@@ -2,7 +2,7 @@ Feature: Automation Testing on media module of real estate application
 
   Background: SignUp
     Given user is on login page
-    When Admin will enter userId "amit92luthra" and password "admin@987654321"
+    When Admin will enter userId "mohankrishna176@gmail.com" and password "Secret@123&&"
     And Admin will click on sign in tab
     Then Admin will be navigated to Real Estate dashboard
     And Admin will hover the mouse over media section and click on library
@@ -74,7 +74,7 @@ Feature: Automation Testing on media module of real estate application
   Scenario Outline: Validate pagination field
     Given Admin will hover the mouse over media section and selects library option from dropdown
     And admin will click on screen options button present on upper right corner of the webpage
-    Then admin will enter "<count>" in Number of items per page: field
+    And admin will enter "<count>" in Number of items per page: field
     And then clicks on apply button
     And admin checks if pagination exists or not
     Then admin will get current page according to filter
@@ -96,7 +96,7 @@ Feature: Automation Testing on media module of real estate application
     And then admin enter the "<Title>" in title bar present above the image and clicks on update tab
     Then admin verifies success message
     And admin clicks on library section and verifies the title on media library webpage
-    Then admin click on view option and verifies the content given in the description field
+    And admin click on view option and verifies the content given in the description field
 
     Examples: 
       | caption                             | alternativetext                   | content                                                                                                                                         | Title |
