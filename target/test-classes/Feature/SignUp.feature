@@ -1,6 +1,6 @@
 Feature: Automation Testing on media module of real estate application
 
-  Background: SignUp
+  Background: Login Functionality
     Given user is on login page
     When Admin will enter userId "mohankrishna176@gmail.com" and password "Secret@123&&"
     And Admin will click on sign in tab

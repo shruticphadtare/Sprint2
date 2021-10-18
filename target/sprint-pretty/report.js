@@ -5,7 +5,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.background({
-  "name": "SignUp",
+  "name": "Login Functionality",
   "description": "",
   "keyword": "Background"
 });
@@ -116,7 +116,7 @@ formatter.after({
   "status": "passed"
 });
 formatter.background({
-  "name": "SignUp",
+  "name": "Login Functionality",
   "description": "",
   "keyword": "Background"
 });
@@ -347,7 +347,7 @@ formatter.after({
   "status": "passed"
 });
 formatter.background({
-  "name": "SignUp",
+  "name": "Login Functionality",
   "description": "",
   "keyword": "Background"
 });
@@ -531,7 +531,7 @@ formatter.examples({
   ]
 });
 formatter.background({
-  "name": "SignUp",
+  "name": "Login Functionality",
   "description": "",
   "keyword": "Background"
 });
@@ -652,7 +652,7 @@ formatter.after({
   "status": "passed"
 });
 formatter.background({
-  "name": "SignUp",
+  "name": "Login Functionality",
   "description": "",
   "keyword": "Background"
 });
@@ -940,7 +940,7 @@ formatter.examples({
   ]
 });
 formatter.background({
-  "name": "SignUp",
+  "name": "Login Functionality",
   "description": "",
   "keyword": "Background"
 });
@@ -1186,7 +1186,7 @@ formatter.examples({
   ]
 });
 formatter.background({
-  "name": "SignUp",
+  "name": "Login Functionality",
   "description": "",
   "keyword": "Background"
 });
