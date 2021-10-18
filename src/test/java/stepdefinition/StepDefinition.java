@@ -26,43 +26,44 @@ import hooks.Hookclass;
 
 public class StepDefinition {
 	
-	//WebDriver driver;
-	WebDriver driver=Hookclass.driver;
+		//WebDriver driver;
+		WebDriver driver=Hookclass.driver;
 	
-	@Given("user is on login page")
-	public void user_is_on_login_page() {
-		System.setProperty("webdriver.chrome.driver", "D:\\chromedriver_win32\\chromedriver.exe");
-		//driver = new ChromeDriver();
-		driver.get("http://realty-real-estatem1.upskills.in/my-profile/");
-		driver.manage().window().maximize();
-	}
+		@Given("user is on login page")
+		public void user_is_on_login_page() {
+			System.setProperty("webdriver.chrome.driver", "D:\\chromedriver_win32\\chromedriver.exe");
+			//driver = new ChromeDriver();
+			driver.get("http://realty-real-estatem1.upskills.in/my-profile/");
+			driver.manage().window().maximize();
+			}
 
-	@When("Admin will enter userId {string} and password {string}")
-	public void admin_will_enter_userId_and_password(String userId, String password) {
-	    try {
-			driver.findElement(By.id("user_login")).sendKeys(userId);
-			driver.findElement(By.id("user_pass")).sendKeys(password);
-		} catch (Exception e) {
-			System.out.println("Admin is unable to login"+e);
-			Assert.fail();
-		}
-	}
-
-	@When("Admin will click on sign in tab")
-	public void admin_will_click_on_sign_in_tab() {
-		try {
-				driver.findElement(By.name("login")).click();
+		@When("Admin will enter userId {string} and password {string}")
+		public void admin_will_enter_userId_and_password(String userId, String password) {
+			try {
+				driver.findElement(By.id("user_login")).sendKeys(userId);
+				driver.findElement(By.id("user_pass")).sendKeys(password);
 			} 
-		catch (Exception e) {
+			catch (Exception e) {
+				System.out.println("Admin is unable to login"+e);
+				Assert.fail();
+			}
+	}	
+
+		@And("Admin will click on sign in tab")
+		public void admin_will_click_on_sign_in_tab() {
+			try {
+				driver.findElement(By.name("login")).click();
+				} 
+			catch (Exception e) {
 				System.out.println("Admin is unable to click on sign in tab"+e);
 				Assert.fail();
 		}
 
 	}
 
-	@Then("Admin will be navigated to Real Estate dashboard")
-	public void admin_will_be_navigated_to_Real_Estate_dashboard() {
-		 try {
+		@Then("Admin will be navigated to Real Estate dashboard")
+		public void admin_will_be_navigated_to_Real_Estate_dashboard() {
+			try {
 				String expectedtitle= "Dashboard ‹ Real Estate — WordPress";
 				String actualTitle=driver.getTitle();
 				Assert.assertEquals(expectedtitle,actualTitle );
@@ -76,7 +77,7 @@ public class StepDefinition {
 	}
 
 	
-	  @Given("Admin will hover the mouse over media section and click on library")
+	  @And("Admin will hover the mouse over media section and click on library")
 	  public void
 	  admin_will_hover_the_mouse_over_media_section_and_click_on_library(){ 
 		  try {
@@ -115,7 +116,7 @@ public class StepDefinition {
 		 }
 	 
 	 
-	  @Then("admin will hover over media section and click on Add New tab")
+	  @Given("admin will hover over media section and click on Add New tab")
 	  public void admin_will_hover_over_media_section_and_click_on_Add_New_tab() {
 		  try {
 			
@@ -139,7 +140,7 @@ public class StepDefinition {
 
 	
 	  
-	   	@Then("Admin will navigates to upload new media webpage")
+	   	@And("Admin will navigates to upload new media webpage")
 	   	public void admin_will_navigates_to_upload_new_media_webpage() {
 	   		try {
 				String expectedtitle= "Upload New Media ‹ Real Estate — WordPress";
@@ -184,7 +185,7 @@ public class StepDefinition {
 	}
 
 	
-	   @Then("Admin will click on all media item dropdown menu and select images option") 
+	   @When("Admin will click on all media item dropdown menu and select images option") 
 	   public void admin_will_click_on_all_media_item_dropdown_menu_and_select_images_option() {
 		   try { 
 			   		Select mediaitem = new Select(driver.findElement(By.id("attachment-filter")));
@@ -199,7 +200,7 @@ public class StepDefinition {
 	  }
 	  
 
-	   @Then("admin will click on all dates dropdown menu and select first option")
+	   @And("admin will click on all dates dropdown menu and select first option")
 	   public void admin_will_click_on_all_dates_dropdown_menu_and_select_first_option()  {
 		   try { 
 			   Select date = new Select(driver.findElement(By.id("filter-by-date")));
@@ -213,7 +214,7 @@ public class StepDefinition {
 	  }
  
 	
-	   @Then("admin will click on filter tab and admin will get total items after first filteration")
+	   @And("admin will click on filter tab and admin will get total items after first filteration")
 	   public void admin_will_click_on_filter_tab_and_admin_will_get_total_items_after_first_filteration() {
 		   	try {
 		   		driver.findElement(By.id("post-query-submit")).click();
@@ -231,7 +232,7 @@ public class StepDefinition {
 	
 
 
-	   @Then("admin will click on all dates dropdown menu and select second option")
+	   @And("admin will click on all dates dropdown menu and select second option")
 	   public void admin_will_click_on_all_dates_dropdown_menu_and_select_second_option_and_clicks_on_filter_tab() {
 		   	try {
 		   		Select date = new Select(driver.findElement(By.id("filter-by-date")));
@@ -245,7 +246,7 @@ public class StepDefinition {
 	}
 	
 	   
-	   @Then("admin will click on filter tab and admin will get total items after second filteration")
+	   @And("admin will click on filter tab and admin will get total items after second filteration")
 	   public void admin_will_click_on_filter_tab_and_admin_will_get_total_items_after_second_filteration() {
 		   	try {
 				driver.findElement(By.id("post-query-submit")).click();
@@ -261,7 +262,7 @@ public class StepDefinition {
 		  }	  
 	   
 	
-	   @Then("admin will click on all dates dropdown menu and select fourth option")
+	   @And("admin will click on all dates dropdown menu and select fourth option")
 	   public void admin_will_click_on_all_dates_dropdown_menu_and_select_fourth_option() {
 		   try {
 			   Select date = new Select(driver.findElement(By.id("filter-by-date")));
@@ -275,7 +276,7 @@ public class StepDefinition {
 	}
 	
 	
-	   @Then("admin clicks on filter tab and admin will get total items after fourth filteration")
+	   @And("admin clicks on filter tab and admin will get total items after fourth filteration")
 	   public void admin_clicks_on_filter_tab_and_admin_will_get_total_items_after_fourth_filteration() {
 		   try {
 			   driver.findElement(By.id("post-query-submit")).click();
@@ -304,7 +305,7 @@ public class StepDefinition {
 	}
 	
 	
-	   @Then("admin will click on all dates dropdown menu again and select first option")
+	   @And("admin will click on all dates dropdown menu again and select first option")
 	   public void admin_will_click_on_all_dates_dropdown_menu_again_and_select_first_option() {
 		   try {
 			   Select date = new Select(driver.findElement(By.id("filter-by-date")));
@@ -318,7 +319,7 @@ public class StepDefinition {
 	}	
 	
 	
-	   @Then("admin clicks on filter tab and admin will get total items after fifth filteration")
+	   @And("admin clicks on filter tab and admin will get total items after fifth filteration")
 	   public void admin_clicks_on_filter_tab_and_admin_will_get_total_items_after_fifth_filteration() {
 		   try {
 			   driver.findElement(By.id("post-query-submit")).click();
@@ -333,7 +334,7 @@ public class StepDefinition {
 	}
 	
 	
-	   @Then("admin will click on all dates dropdown menu again and select second option")
+	   @And("admin will click on all dates dropdown menu again and select second option")
 	   public void admin_will_click_on_all_dates_dropdown_menu_again_and_select_second_option(){
 		   try {
 			   Select date = new Select(driver.findElement(By.id("filter-by-date")));
@@ -348,7 +349,7 @@ public class StepDefinition {
 	}
 	   
 	   
-	   @Then("clicks on filter tab and admin will get total items after sixth filteration")
+	   @And("clicks on filter tab and admin will get total items after sixth filteration")
 	   public void clicks_on_filter_tab_and_admin_will_get_total_items_after_sixth_filteration() {
 		   try {
 			   driver.findElement(By.id("post-query-submit")).click();
@@ -363,7 +364,7 @@ public class StepDefinition {
 	}
 		
 	
-		@Then("admin will click on all dates dropdown menu again and select fourth option")
+		@And("admin will click on all dates dropdown menu again and select fourth option")
 		public void admin_will_click_on_all_dates_dropdown_menu_again_and_select_fourth_option() {
 			try {
 				Select date = new Select(driver.findElement(By.id("filter-by-date")));
@@ -377,7 +378,7 @@ public class StepDefinition {
 	  
 	}
 
-		@Then("admin clicks on filter tab and admin will get total items after eight filteration")
+		@And("admin clicks on filter tab and admin will get total items after eight filteration")
 		public void admin_clicks_on_filter_tab_and_admin_will_get_total_items_after_eight_filteration() {
 			try {
 				driver.findElement(By.id("post-query-submit")).click();
@@ -405,7 +406,7 @@ public class StepDefinition {
 		}
 	}
 
-		@Then("Admin will select checkbox available in front of image")
+		@And("Admin will select checkbox available in front of image")
 		public void admin_will_select_checkbox_available_in_front_of_image() {
 			try {
 				driver.findElement(By.id("cb-select-11773")).click();
@@ -448,7 +449,7 @@ public class StepDefinition {
 		
 	}
 
-		@Then("admin will dismiss the action")
+		@And("admin will dismiss the action")
 		public void admin_dismiss_the_action() {
 				try {
 					Alert alert=driver.switchTo().alert(); 
@@ -463,7 +464,7 @@ public class StepDefinition {
 				}
 		}
 
-		@Then("admin will refresh the page")
+		@And("admin will refresh the page")
 		public void admin_refresh_the_page() {
 			try {
 				driver.navigate().refresh();
@@ -498,7 +499,7 @@ public class StepDefinition {
 
 
 
-		@Then("admin will enter {string} in search media items field and clicks on enter key")
+		@And("admin will enter {string} in search media items field and clicks on enter key")
 		public void admin_will_enter_in_search_media_items_field_and_clicks_on_enter_key(String data) {
 			try {
 				WebElement search=driver.findElement(By.id("media-search-input"));
@@ -531,7 +532,7 @@ public class StepDefinition {
 
 	
 
-		@Then("admin will check the availability of items according to search")
+		@And("admin will check the availability of items according to search")
 		public void admin_will_check_the_availability_of_items_according_to_search() {
 			try {
 				String str=driver.findElement(By.xpath("//*[@id=\"posts-filter\"]/div[2]/div[2]/span[1]")).getText();
@@ -740,7 +741,7 @@ public class StepDefinition {
 				}
 }
 		
-		@Then("admin checks total column and fetch column names from the media table")
+		@And("admin checks total column and fetch column names from the media table")
 		public void admin_checks_total_column_and_fetch_column_names_from_the_media_table(){
 				
 				try {
@@ -763,7 +764,7 @@ public class StepDefinition {
 		}
 		
 				
-		@Then("admin fetch first ten existing records")
+		@And("admin fetch first ten existing records")
 		public void admin_fetch_first_ten_existing_records() {
 			
 			try {
@@ -800,7 +801,7 @@ public class StepDefinition {
 		}
 	}
 	
-		@Then("admin will click on screen options button present on upper right corner of the webpage")
+		@And("admin will click on screen options button present on upper right corner of the webpage")
 		public void admin_will_click_on_screen_options_button_present_on_upper_right_corner_of_the_webpage() {
 			try {
 				driver.findElement(By.xpath("//*[@id='show-settings-link']")).click();
@@ -815,7 +816,7 @@ public class StepDefinition {
 
 	
 	
-		@Then("admin will enter {string} in Number of items per page: field")
+		@And("admin will enter {string} in Number of items per page: field")
 		public void admin_will_enter_in_Number_of_items_per_page_field(String count) {
 			try {
 				driver.findElement(By.id("upload_per_page")).clear();
@@ -830,7 +831,7 @@ public class StepDefinition {
 	}
 	
 
-		@Then("then clicks on apply button")
+		@And("then clicks on apply button")
 		public void then_clicks_on_apply_button() {
 			try {
 				driver.findElement(By.id("screen-options-apply")).click();
@@ -843,7 +844,7 @@ public class StepDefinition {
 }
 
 	
-		@Then("admin checks if pagination exists or not")
+		@And("admin checks if pagination exists or not")
 		public void admin_checks_if_pagination_exists_or_not() {
 		
 			try {
@@ -915,7 +916,7 @@ public class StepDefinition {
 
 
 
-		@Then("then admin will navigate to first page using")
+		@And("then admin will navigate to first page using")
 		public void then_admin_will_navigate_to_first_page_using() {
 			try {
 				WebElement firstpage= driver.findElement(By.xpath("//*[@id='posts-filter']/div[2]/div[2]/span[2]/a[1]"));
@@ -995,7 +996,7 @@ public class StepDefinition {
 	}
 	
 	
-		@Then("admin will enter {string} in caption field and {string} in alternative text field and {string} in the description field")
+		@And("admin will enter {string} in caption field and {string} in alternative text field and {string} in the description field")
 		public void admin_will_enter_in_caption_field_and_in_alternative_text_field_and_in_the_description_field(String caption, String alternativetext, String content) {
 		  try {
 			  driver.findElement(By.id("attachment_caption")).clear();
@@ -1028,7 +1029,7 @@ public class StepDefinition {
 	}
 	
 
-		@Then("then admin enter the {string} in title bar present above the image and clicks on update tab")
+		@And("then admin enter the {string} in title bar present above the image and clicks on update tab")
 		public void then_admin_enter_the_in_title_bar_present_above_the_image_and_clicks_on_update_tab(String Title) {
 		  try {
 			  driver.findElement(By.id("title")).clear();
@@ -1063,7 +1064,7 @@ public class StepDefinition {
 	  }
 
 		
-	@Then("admin clicks on library section and verifies the title on media library webpage")
+	@And("admin clicks on library section and verifies the title on media library webpage")
 	  public void admin_clicks_on_library_section_and_verifies_the_title_on_media_library_webpage() {
 		  
 		  try {
@@ -1083,7 +1084,7 @@ public class StepDefinition {
 		 }
 	  
 	  
-	  @Then("admin click on view option and verifies the content given in the description field")
+	  @And("admin click on view option and verifies the content given in the description field")
 	  public void admin_click_on_view_option_and_verifies_the_content_given_in_the_description_field() {
 		  try {
 				WebElement element = driver.findElement(By.xpath("//*[@id='post-11773']/td/div/span[3]/a"));
